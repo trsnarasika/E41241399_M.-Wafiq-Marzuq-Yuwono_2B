@@ -409,8 +409,6 @@ if (selectedRow == -1) {
 
     private void jhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jhapusActionPerformed
         // TODO add your handling code here:
-    
-
     int selectedRow = jtabell.getSelectedRow();
     
     if (selectedRow == -1) {
@@ -441,9 +439,6 @@ if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Error saat menghapus data: " + e.getMessage());
         }
     }
-
-
-
 
     }//GEN-LAST:event_jhapusActionPerformed
 

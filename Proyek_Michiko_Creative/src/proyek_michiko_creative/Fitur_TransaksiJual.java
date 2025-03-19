@@ -65,6 +65,7 @@ public class Fitur_TransaksiJual extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Error saat mengambil data: " + e.getMessage());
     }
 }
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -97,6 +98,7 @@ public class Fitur_TransaksiJual extends javax.swing.JFrame {
         tcari = new javax.swing.JTextField();
         jcari = new javax.swing.JButton();
         jTambah1 = new javax.swing.JButton();
+        tmember = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -304,6 +306,13 @@ public class Fitur_TransaksiJual extends javax.swing.JFrame {
         });
         getContentPane().add(jTambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, 100, -1));
 
+        tmember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tmemberActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tmember, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 220, 50));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/fitur penjualan sayang.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 800));
 
@@ -482,27 +491,21 @@ if (selectedRow != -1) {
 
     private void tjumlahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tjumlahActionPerformed
         // TODO add your handling code here:
-         try { 
-    int jumlah = Integer.parseInt(tjumlah.getText());
-    int hargaSatuan = 25000; 
-    int total = jumlah * hargaSatuan;
-    String namaBarang = "jaddah";
-    String pembeli = "bayu";
-    int idbarang = 1;
-
-    ttotalharga.setText(String.valueOf(total)); 
-    tnamabarang.setText(namaBarang);
-    tusername.setText(pembeli);
-    tidbarang.setText(String.valueOf(idbarang));
-
-} catch (NumberFormatException e) { 
-    ttotalharga.setText("Input tidak valid");
-    tnamabarang.setText("");
-    tusername.setText("");
-    tidbarang.setText("");
-}
- 
-    
+    try { 
+        int jumlah = Integer.parseInt(tjumlah.getText()); 
+        int hargaSatuan = 25000; 
+        int total = jumlah * hargaSatuan; 
+        String namaBarang = "jaddah"; 
+        String pembeli = "bayu"; 
+        int idbarang = 1; ttotalharga.setText(String.valueOf(total)); 
+        tnamabarang.setText(namaBarang); tusername.setText(pembeli); 
+        tidbarang.setText(String.valueOf(idbarang)); } 
+    catch (NumberFormatException e) { 
+        ttotalharga.setText("Input tidak valid"); 
+        tnamabarang.setText(""); 
+        tusername.setText(""); 
+        tidbarang.setText(""); 
+    }  
     }//GEN-LAST:event_tjumlahActionPerformed
 
     private void tcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tcariActionPerformed
@@ -606,6 +609,36 @@ try {
 }
     }//GEN-LAST:event_jTambah1ActionPerformed
 
+    private void tmemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmemberActionPerformed
+        // TODO add your handling code here:
+        String rfid = tmember.getText(); // Assuming jtxtusername is the text field for RFID input
+try {
+    String sql = "SELECT * FROM member WHERE id_member = ?";
+    PreparedStatement stmt = conn.prepareStatement(sql);
+    stmt.setString(1, rfid);
+    ResultSet rs = stmt.executeQuery();
+    if (rs.next()) {
+        tmember.setText("");
+        JOptionPane.showMessageDialog(this, "Scan berhasil");
+        
+        // Apply 20% discount
+        int totalharga = Integer.parseInt(ttotalharga.getText());
+        int diskon = totalharga * 20 / 100;
+        int hargaSetelahDiskon = totalharga - diskon;
+        
+        // Update the totalharga text field with the discounted price
+        ttotalharga.setText(String.valueOf(hargaSetelahDiskon));
+        
+    } else {
+        tmember.setText("");
+        JOptionPane.showMessageDialog(this, "Member tidak ditemukan.");
+    }
+} catch (Exception e) {
+    System.err.println("General Error: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Terjadi kesalahan. Silakan coba lagi.");
+}
+    }//GEN-LAST:event_tmemberActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -661,6 +694,7 @@ try {
     private javax.swing.JTextField tidbarang;
     private javax.swing.JTextField tidtransaksijual;
     private javax.swing.JTextField tjumlah;
+    private javax.swing.JPasswordField tmember;
     private javax.swing.JTextField tnamabarang;
     private javax.swing.JTextField ttanggal;
     private javax.swing.JTextField ttotalharga;

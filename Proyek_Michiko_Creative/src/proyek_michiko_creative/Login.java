@@ -4,11 +4,12 @@
  */
 package proyek_michiko_creative;
 
-import javax.swing.JOptionPane;
+import koneksi.Koneksi;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import koneksi.Koneksi;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import proyek_michiko_creative.Menu;
 
 
 /**
@@ -16,16 +17,42 @@ import java.sql.ResultSet;
  * @author wafiq
  */
 public class Login extends javax.swing.JFrame {
-private Connection conn;
-    /**
-     * Creates new form Login
-     */
+    private Connection conn;
+
     public Login() {
         initComponents();
         conn = Koneksi.getConnection();
-//       getData();
+//        RFIDReader rfidReader = new RFIDReader();
+//        rfidReader.setListener(this::authenticateUser);
+//        Thread t = new Thread(rfidReader::readData);
+//        t.start();
     }
 
+    private void authenticateUser(String rfid) {
+        try {
+            String sql = "SELECT * FROM akun WHERE rfid = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, rfid);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                String username = rs.getString("username");
+                JOptionPane.showMessageDialog(this, "Anda Log in sebagai " + username);
+                Menu halut = new Menu();
+                halut.setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "RFID tidak dikenal!");
+            }
+
+            rs.close();
+            stmt.close();
+        } catch (Exception e) {
+            System.err.println("General Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Terjadi kesalahan. Silakan coba lagi.");
+        }
+    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -101,6 +128,33 @@ private Connection conn;
 
     private void jtxtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtusernameActionPerformed
         // TODO add your handling code here:
+        
+    String rfid = jtxtusername.getText(); // Assuming jtxtusername is the text field for RFID input
+
+    try {
+        String sql = "SELECT * FROM akun WHERE rfid = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, rfid);
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            Menu halut = new Menu();
+            halut.setVisible(true);
+            this.dispose();
+        } else {
+            if (rfid.length() == 10) {
+                    jtxtusername.setText(""); // Reset the text field
+                JOptionPane.showMessageDialog(this, "Scan error atau tidak terdata!");
+            }
+        }
+
+        rs.close();
+        stmt.close();
+    } catch (Exception e) {
+        System.err.println("General Error: " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "Terjadi kesalahan. Silakan coba lagi.");
+    }
+
     }//GEN-LAST:event_jtxtusernameActionPerformed
 
     private void jbkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbkeluarActionPerformed

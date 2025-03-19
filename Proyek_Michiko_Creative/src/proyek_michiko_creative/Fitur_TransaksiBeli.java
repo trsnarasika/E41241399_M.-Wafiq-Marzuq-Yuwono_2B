@@ -99,6 +99,7 @@ private Connection conn;
         jlaporan = new javax.swing.JButton();
         tcari = new javax.swing.JTextField();
         jcari = new javax.swing.JButton();
+        tbarcode = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,6 +118,11 @@ private Connection conn;
 
         tidtransaksi.setBackground(new java.awt.Color(0, 0, 0, 0));
         tidtransaksi.setBorder(null);
+        tidtransaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tidtransaksiActionPerformed(evt);
+            }
+        });
         getContentPane().add(tidtransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 210, 30));
 
         tidsuplier.setBackground(new java.awt.Color(0, 0, 0, 0));
@@ -307,6 +313,13 @@ private Connection conn;
             }
         });
         getContentPane().add(jcari, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 453, 40, 30));
+
+        tbarcode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbarcodeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tbarcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 130, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/fitur pembelian sayang.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 800));
@@ -621,6 +634,55 @@ private void searchData(String keyword) {
 
     }//GEN-LAST:event_tnamabarangActionPerformed
 
+    private void tidtransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tidtransaksiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tidtransaksiActionPerformed
+
+    private void tbarcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbarcodeActionPerformed
+     
+    String idbarcode = tbarcode.getText().trim();
+    
+    if (idbarcode.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Barcode tidak boleh kosong.", "Peringatan", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    try {
+        // Query untuk memeriksa apakah barcode sudah ada
+        String sqlSelect = "SELECT jumlah FROM testbarang WHERE id_barang = ?";
+        PreparedStatement pstSelect = conn.prepareStatement(sqlSelect);
+        pstSelect.setString(1, idbarcode);
+        ResultSet rs = pstSelect.executeQuery();
+
+        if (rs.next()) {
+            // Jika barcode ditemukan, tambahkan jumlah 1
+            int jumlah = rs.getInt("jumlah") + 1;
+            String sqlUpdate = "UPDATE testbarang SET jumlah = ? WHERE id_barang = ?";
+            PreparedStatement pstUpdate = conn.prepareStatement(sqlUpdate);
+            pstUpdate.setInt(1, jumlah);
+            pstUpdate.setString(2, idbarcode);
+            pstUpdate.executeUpdate();
+            tbarcode.setText("");
+            JOptionPane.showMessageDialog(this, "Jumlah barang berhasil ditambahkan.", "Berhasil", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            // Jika barcode tidak ditemukan, masukkan data baru
+            String sqlInsert = "INSERT INTO testbarang (id_barang, jumlah) VALUES (?, ?)";
+            PreparedStatement pstInsert = conn.prepareStatement(sqlInsert);
+            pstInsert.setString(1, idbarcode);
+            pstInsert.setInt(2, 1);
+            pstInsert.executeUpdate();
+            
+            JOptionPane.showMessageDialog(this, "Barang baru berhasil ditambahkan.", "Berhasil", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    } catch (Exception e) {
+        // Tangani error dan tampilkan pesan kepada pengguna
+        JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + e.getMessage(), "Kesalahan", JOptionPane.ERROR_MESSAGE);
+    }
+
+
+    }//GEN-LAST:event_tbarcodeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -672,6 +734,7 @@ private void searchData(String keyword) {
     private javax.swing.JTable jtabeltransaksibeli;
     private javax.swing.JButton jtambah;
     private javax.swing.JButton jubah;
+    private javax.swing.JTextField tbarcode;
     private javax.swing.JTextField tcari;
     private javax.swing.JTextField tidbarang;
     private javax.swing.JTextField tidsuplier;

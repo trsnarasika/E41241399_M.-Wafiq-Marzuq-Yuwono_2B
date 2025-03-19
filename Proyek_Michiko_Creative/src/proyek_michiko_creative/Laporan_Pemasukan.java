@@ -327,6 +327,11 @@ private void tampilkanLaporan() {
         ctanggalawal.setBackground(new java.awt.Color(255, 204, 102));
         ctanggalawal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         ctanggalawal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ctanggalawal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ctanggalawalActionPerformed(evt);
+            }
+        });
         getContentPane().add(ctanggalawal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 100, -1));
 
         ctanggalakhir.setBackground(new java.awt.Color(255, 204, 102));
@@ -464,6 +469,10 @@ private void tampilkanLaporan() {
         fitur.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ctanggalawalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ctanggalawalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ctanggalawalActionPerformed
 
     /**
      * @param args the command line arguments
