@@ -49,8 +49,10 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Text Cursor"/>
         </Property>
+        <Property name="focusCycleRoot" type="boolean" value="true"/>
       </Properties>
       <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtusernameFocusGained"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtxtusernameActionPerformed"/>
       </Events>
       <Constraints>

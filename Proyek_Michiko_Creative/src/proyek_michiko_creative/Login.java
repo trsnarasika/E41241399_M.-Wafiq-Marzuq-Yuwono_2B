@@ -4,6 +4,7 @@
  */
 package proyek_michiko_creative;
 
+import java.awt.TextField;
 import koneksi.Koneksi;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -52,6 +53,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Terjadi kesalahan. Silakan coba lagi.");
         }
     }
+    
    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -82,6 +84,12 @@ public class Login extends javax.swing.JFrame {
         );
         jtxtusername.setBorder(null);
         jtxtusername.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jtxtusername.setFocusCycleRoot(true);
+        jtxtusername.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtxtusernameFocusGained(evt);
+            }
+        });
         jtxtusername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtusernameActionPerformed(evt);
@@ -207,6 +215,10 @@ public class Login extends javax.swing.JFrame {
 }
 }
     }//GEN-LAST:event_jmasukActionPerformed
+
+    private void jtxtusernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxtusernameFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtusernameFocusGained
     
     /**
      * @param args the command line arguments
