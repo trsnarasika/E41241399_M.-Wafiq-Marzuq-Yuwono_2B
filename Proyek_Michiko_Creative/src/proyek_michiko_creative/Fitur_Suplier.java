@@ -149,6 +149,11 @@ private Connection conn;
         tid_suplier.setBackground(new java.awt.Color(0, 0, 0, 0)
         );
         tid_suplier.setBorder(null);
+        tid_suplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tid_suplierActionPerformed(evt);
+            }
+        });
         getContentPane().add(tid_suplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 210, 30));
 
         tnama_suplier.setBackground(new java.awt.Color(0, 0, 0, 0)
@@ -542,6 +547,10 @@ private void searchData(String keyword) {
         fitur.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tid_suplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tid_suplierActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tid_suplierActionPerformed
 
     /**
      * @param args the command line arguments

@@ -222,6 +222,11 @@ public class Laporan_Pengeluaran extends javax.swing.JFrame {
         cbulan.setBackground(new java.awt.Color(255, 204, 102));
         cbulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", " " }));
         cbulan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cbulan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbulanActionPerformed(evt);
+            }
+        });
         getContentPane().add(cbulan, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 90, -1));
 
         ctahun.setBackground(new java.awt.Color(255, 204, 102));
@@ -327,6 +332,11 @@ public class Laporan_Pengeluaran extends javax.swing.JFrame {
         );
         jlaporan.setBorder(null);
         jlaporan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlaporan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jlaporanActionPerformed(evt);
+            }
+        });
         getContentPane().add(jlaporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 490, 170, 30));
 
         jkeluar.setBackground(new java.awt.Color(0, 0, 0, 0)
@@ -343,11 +353,21 @@ public class Laporan_Pengeluaran extends javax.swing.JFrame {
         ctanggalakhir.setBackground(new java.awt.Color(255, 204, 102));
         ctanggalakhir.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         ctanggalakhir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ctanggalakhir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ctanggalakhirActionPerformed(evt);
+            }
+        });
         getContentPane().add(ctanggalakhir, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 90, -1));
 
         ctanggalawal.setBackground(new java.awt.Color(255, 204, 102));
         ctanggalawal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         ctanggalawal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ctanggalawal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ctanggalawalActionPerformed(evt);
+            }
+        });
         getContentPane().add(ctanggalawal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 100, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 153, 51));
@@ -365,6 +385,11 @@ public class Laporan_Pengeluaran extends javax.swing.JFrame {
         jpengeluaran.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jpengeluaran.setText("pengeluaran");
         jpengeluaran.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpengeluaran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpengeluaranActionPerformed(evt);
+            }
+        });
         getContentPane().add(jpengeluaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 50, 170, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/fitur pengeluaran sayang.jpg"))); // NOI18N
@@ -436,6 +461,26 @@ public class Laporan_Pengeluaran extends javax.swing.JFrame {
         fitur.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jpengeluaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpengeluaranActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jpengeluaranActionPerformed
+
+    private void ctanggalawalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ctanggalawalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ctanggalawalActionPerformed
+
+    private void ctanggalakhirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ctanggalakhirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ctanggalakhirActionPerformed
+
+    private void jlaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlaporanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlaporanActionPerformed
+
+    private void cbulanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbulanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbulanActionPerformed
 
     /**
      * @param args the command line arguments

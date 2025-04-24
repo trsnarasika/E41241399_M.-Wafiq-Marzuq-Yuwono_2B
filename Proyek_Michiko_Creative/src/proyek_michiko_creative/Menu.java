@@ -51,7 +51,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbfiturActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbfiturActionPerformed
-        // TODO add your handling code here:
+
         MenuFitur fitur = new MenuFitur ();
             fitur.setVisible(true);
             this.dispose();

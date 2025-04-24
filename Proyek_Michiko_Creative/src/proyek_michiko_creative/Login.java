@@ -101,6 +101,11 @@ public class Login extends javax.swing.JFrame {
         );
         jtxtpassword.setBorder(null);
         jtxtpassword.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jtxtpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtpasswordActionPerformed(evt);
+            }
+        });
         getContentPane().add(jtxtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 130, 30));
 
         jbkeluar.setBackground(new java.awt.Color(0, 0, 0, 0)
@@ -219,6 +224,10 @@ public class Login extends javax.swing.JFrame {
     private void jtxtusernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxtusernameFocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtusernameFocusGained
+
+    private void jtxtpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtpasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtpasswordActionPerformed
     
     /**
      * @param args the command line arguments

@@ -127,6 +127,11 @@ private Connection conn;
 
         tidsuplier.setBackground(new java.awt.Color(0, 0, 0, 0));
         tidsuplier.setBorder(null);
+        tidsuplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tidsuplierActionPerformed(evt);
+            }
+        });
         getContentPane().add(tidsuplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 232, 220, 30));
 
         tnamabarang.setBackground(new java.awt.Color(0, 0, 0, 0));
@@ -149,14 +154,29 @@ private Connection conn;
 
         ttanggal.setBackground(new java.awt.Color(0, 0, 0, 0));
         ttanggal.setBorder(null);
+        ttanggal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ttanggalActionPerformed(evt);
+            }
+        });
         getContentPane().add(ttanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 152, 220, 30));
 
         ttotalharga.setBackground(new java.awt.Color(0, 0, 0, 0));
         ttotalharga.setBorder(null);
+        ttotalharga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ttotalhargaActionPerformed(evt);
+            }
+        });
         getContentPane().add(ttotalharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 232, 220, 30));
 
         tusername.setBackground(new java.awt.Color(0, 0, 0, 0));
         tusername.setBorder(null);
+        tusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tusernameActionPerformed(evt);
+            }
+        });
         getContentPane().add(tusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, 220, 30));
 
         tidbarang.setBackground(new java.awt.Color(0, 0, 0, 0));
@@ -286,7 +306,7 @@ private Connection conn;
                 jkeluarActionPerformed(evt);
             }
         });
-        getContentPane().add(jkeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 740, 190, 50));
+        getContentPane().add(jkeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 730, 190, 50));
 
         jlaporan.setBackground(new java.awt.Color(0, 0, 0, 0)
         );
@@ -302,6 +322,11 @@ private Connection conn;
         tcari.setBackground(new java.awt.Color(0, 0, 0, 0));
         tcari.setBorder(null);
         tcari.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        tcari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tcariActionPerformed(evt);
+            }
+        });
         getContentPane().add(tcari, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 230, 20));
 
         jcari.setBackground(new java.awt.Color(0, 0, 0, 0));
@@ -682,6 +707,26 @@ private void searchData(String keyword) {
 
 
     }//GEN-LAST:event_tbarcodeActionPerformed
+
+    private void tidsuplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tidsuplierActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tidsuplierActionPerformed
+
+    private void ttanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ttanggalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ttanggalActionPerformed
+
+    private void ttotalhargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ttotalhargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ttotalhargaActionPerformed
+
+    private void tusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tusernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tusernameActionPerformed
+
+    private void tcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tcariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tcariActionPerformed
 
     /**
      * @param args the command line arguments

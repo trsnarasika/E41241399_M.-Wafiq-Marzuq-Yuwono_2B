@@ -145,7 +145,7 @@ public class MenuFitur extends javax.swing.JFrame {
     }//GEN-LAST:event_jbkeluarActionPerformed
 
     private void jbfiturActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbfiturActionPerformed
-        // TODO add your handling code here:
+       
         Menu mnu = new Menu ();
             mnu.setVisible(true);
             this.dispose();

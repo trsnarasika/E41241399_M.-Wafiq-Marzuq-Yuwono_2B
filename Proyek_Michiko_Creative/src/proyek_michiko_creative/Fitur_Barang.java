@@ -102,10 +102,20 @@ private Connection conn;
 
         tstock.setBackground(new java.awt.Color(0, 0, 0, 0));
         tstock.setBorder(null);
+        tstock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tstockActionPerformed(evt);
+            }
+        });
         getContentPane().add(tstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 210, 30));
 
         tnama_barang.setBackground(new java.awt.Color(0, 0, 0, 0));
         tnama_barang.setBorder(null);
+        tnama_barang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnama_barangActionPerformed(evt);
+            }
+        });
         getContentPane().add(tnama_barang, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 210, 30));
 
         tharga.setBackground(new java.awt.Color(0, 0, 0, 0));
@@ -590,6 +600,14 @@ private void searchData(String keyword) {
         fitur.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbfiturActionPerformed
+
+    private void tnama_barangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnama_barangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnama_barangActionPerformed
+
+    private void tstockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tstockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tstockActionPerformed
 
     /**
      * @param args the command line arguments

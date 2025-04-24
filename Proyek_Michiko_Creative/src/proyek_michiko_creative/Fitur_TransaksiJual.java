@@ -125,6 +125,11 @@ public class Fitur_TransaksiJual extends javax.swing.JFrame {
 
         ttanggal.setBackground(new java.awt.Color(0, 0, 0, 0));
         ttanggal.setBorder(null);
+        ttanggal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ttanggalActionPerformed(evt);
+            }
+        });
         getContentPane().add(ttanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 210, 30));
 
         tjumlah.setBackground(new java.awt.Color(0, 0, 0, 0));
@@ -138,14 +143,29 @@ public class Fitur_TransaksiJual extends javax.swing.JFrame {
 
         ttotalharga.setBackground(new java.awt.Color(0, 0, 0, 0));
         ttotalharga.setBorder(null);
+        ttotalharga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ttotalhargaActionPerformed(evt);
+            }
+        });
         getContentPane().add(ttotalharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 210, 30));
 
         tidbarang.setBackground(new java.awt.Color(0, 0, 0, 0));
         tidbarang.setBorder(null);
+        tidbarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tidbarangActionPerformed(evt);
+            }
+        });
         getContentPane().add(tidbarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 210, 30));
 
         tusername.setBackground(new java.awt.Color(0, 0, 0, 0));
         tusername.setBorder(null);
+        tusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tusernameActionPerformed(evt);
+            }
+        });
         getContentPane().add(tusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 210, 30));
 
         jTabelTransaksiJual.setBackground(new java.awt.Color(255, 204, 102));
@@ -638,6 +658,22 @@ try {
     JOptionPane.showMessageDialog(this, "Terjadi kesalahan. Silakan coba lagi.");
 }
     }//GEN-LAST:event_tmemberActionPerformed
+
+    private void ttanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ttanggalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ttanggalActionPerformed
+
+    private void ttotalhargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ttotalhargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ttotalhargaActionPerformed
+
+    private void tidbarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tidbarangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tidbarangActionPerformed
+
+    private void tusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tusernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tusernameActionPerformed
 
     /**
      * @param args the command line arguments
